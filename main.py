@@ -118,3 +118,20 @@ if __name__ == "__main__":
                     else:
                         out[-1] += f"'X{k}"
         print("+".join(out))
+    for i, F in enumerate(Z):
+        print(f"Z{i} =", end=" ")
+        out = []
+        for j in range(S*2**e_n):
+            if F[j] == 1:
+                out.append("")
+                for k, q in enumerate(Q):
+                    if q[j] == 1:
+                        out[-1] += f"Z{k}"
+                    else:
+                        out[-1] += f"'Z{k}"
+                for k, x in enumerate(E):
+                    if x[j] == 1:
+                        out[-1] += f"Z{k}"
+                    else:
+                        out[-1] += f"'Z{k}"
+        print("+".join(out))
